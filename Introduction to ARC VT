@@ -1,0 +1,21 @@
+############################
+How to access the ARC server
+############################
+
+
+Once you are on a VT connection (eduroam), go to the ondemand website and login using your VT PID:
+https://ood.arc.vt.edu/pun/sys/dashboard/
+Once you are successfully on the OnDemand dashboard, click on the large RStudio button.
+On the new page make the following selections:
+Cluster: Tinkercliffs
+Partition: normal_q
+Account: yours
+Number of hours: however long you want to work (If you are just testing it out, choose one hour. If you
+are working for an extended session, estimate how much time you need. You can’t extend the time once
+you have set it, so be generous)
+Version: Any should work. I
+Number of cores -> 1 (one node is pretty powerful already)
+Then hit “Launch”. You may have to wait a bit for the session to start, but hopefully not more than 5-10
+minutes. Once you start a session, an RStudio window should open up as a tab in your browser.
+
+The same with any software. Open a cluster and call the software 
