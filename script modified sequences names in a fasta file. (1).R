@@ -1,8 +1,3 @@
-library(Biostrings)
-library(msa)
-
-library("rentrez")
-
 
 # Read the FASTA file
 fasta_file <- "C:/Users/analorena/Documents/ESCOBAR LAB/EVOLUTION Rabies Review paper/COMPLETE GENOME/alignment Complete genomes.fasta"
@@ -37,4 +32,5 @@ writeLines(modified_fasta, output_file)
 cat("Modified FASTA file saved as:", output_file, "\n")
 
 getwd()
+
 
