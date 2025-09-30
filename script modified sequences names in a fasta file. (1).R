@@ -9,9 +9,6 @@ num_sequences <- sum(grepl("^>", fasta_lines))
 # Print the number of sequences
 cat("Number of sequences in the file:", num_sequences, "\n")
 
-# Load the FASTA file
-fasta_file <- "C:/Users/analorena/Documents/ESCOBAR LAB/EVOLUTION Rabies Review paper/COMPLETE GENOME/alignment Complete genomes.fasta"
-fasta_lines <- readLines(fasta_file)
 
 # Modify the headers
 modified_fasta <- sapply(fasta_lines, function(line) {
@@ -32,5 +29,6 @@ writeLines(modified_fasta, output_file)
 cat("Modified FASTA file saved as:", output_file, "\n")
 
 getwd()
+
 
 
