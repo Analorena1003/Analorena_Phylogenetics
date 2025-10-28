@@ -11,9 +11,8 @@ library(Biostrings)
 
 # FASTA file
 fasta_file <- "rabies"
-mySequenceFile <- system.file("examples", "exampleAA.fasta", package="msa")
-mySequences <- readAAStringSet(mySequenceFile)
-mySequences
+mySequences <- readDNAStringSet("C:/Users/analorena/xxxx.fas.txt")
+
 
 # Check the first few sequences
 head(mySequences)
@@ -21,6 +20,9 @@ head(mySequences)
 library(msa)
 # Alignment
 alignment <- msa(mySequences)
+
+#Muscle methodology
+alignment <- msa(mySequences, method = "Muscle")
 
 # Assuming `sequences` is already read in from your FASTA file
 alignment <- msa(mySequences, substitutionMatrix = "DNA")
@@ -34,11 +36,7 @@ print(consensus)
 
 library(ggplot2)
 library(ggmsa)
-protein_sequences <- system.file("extdata", "sample.fasta", package = "ggmsa")
-ggmsa("C:/Users/analorena/xxxx.fas.txt", start = 1, end = 20, char_width = 0.5, seq_name = T)+ 
- geom_seqlogo() + 
- geom_msaBar()
-ggmsa(mySequences)
+ggmsa("C:/Users/analorena/xxxx.fas.txt", seq_name = TRUE)
 
 # Plot the alignment 
-msaPrettyPrint(alignment, output="pdf", file="alignment_output.pdf")n
+msaPrettyPrint(alignment, output="pdf", file="alignment_output.pdf")
