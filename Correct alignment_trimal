@@ -1,5 +1,5 @@
 trimal
-mamba install trimal -c biocnda
+mamba install trimal -c bioconda
 mamba install trimal -c bioconda
 ls
 trimal -in SSU.aln -out SSU.trim.aln -gt 0.1 
