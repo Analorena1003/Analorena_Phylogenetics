@@ -24,3 +24,7 @@ mamba create -n py39 python=3.9
 Now, when you start a session, you can activate this environment by running:
 
 mamba activate SYSB3035
+
+BASE = source ~/.bashrc
+
+mamba activate py39
