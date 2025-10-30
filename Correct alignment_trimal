@@ -8,6 +8,9 @@ seqkit stats SSU.trim.aln
 seqkit stats SSU.aln
 trimal 
 
+seqkit --help
+trimal --help
+
 EXAMPLE YFV:
 trimal -in YFV_aligment_MAFFT.fasta -out YFV_aligment.trim.aln -gt 0.1 
 seqkit stats YFV_aligment_MAFFT.fasta
