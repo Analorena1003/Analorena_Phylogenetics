@@ -1,14 +1,14 @@
-Combine files to do an alignment and after a FastTree (usefull to proposals, or obtain fast results)
+##### Combine files to do an alignment and after a FastTree (usefull to proposals, or obtain fast results)
 
 cat fastaX.fna fastaY.fna fastaZ.fna > combined_fastaXYZ.fna
 
-We can use for exaple: Clustal Omega
+## We can use for exaple: Clustal Omega
 mamba install clustalo -c bioconda 
 clustalo --help
 
 clustalo -i combined_fastaXYZ.fna -o combined_fastaXYZ.aln –force
 
-Use BioEdit, or MView to visualize alignments.
+### Use BioEdit, or MView to visualize alignments.
 Also you can use R, or Pthon to visualize it directly in the terminal
 
 Use the command more
