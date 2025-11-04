@@ -20,7 +20,9 @@ more combined_fastaXYZ.aln
 # But there are some new methods like FastTree that speed things up.
 
 # After the alignment, you can make a first tree using FastTree Software:
+
 mamba install fasttree -c bioconda 
+
 fasttree -nt combined_fastaXYZ.aln > combined_fastaXYZ.nwk
 
 # Use the command more to see your tree:
