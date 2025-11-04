@@ -27,7 +27,7 @@ fasttree -nt combined_fastaXYZ.aln > combined_fastaXYZ.nwk
 more combined_fastaXYZ.nwk
 
 # Visualize your tree
-# Use FigTree or iTOL an visualize it (
-You can root it directly in iTOL or FigTree (you also can root it before by coding.
+# Use FigTree or iTOL an visualize it (it is ONLINE software)
+# You can root it directly in iTOL or FigTree (you also can root it before by coding.
 
-READY TO EDIT YOUR FIRST PHYLOGENETIC TREE
+# READY TO EDIT YOUR FIRST PHYLOGENETIC TREE
