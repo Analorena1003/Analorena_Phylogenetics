@@ -11,6 +11,8 @@ Represents the models to infer maximum-likelihood. Some commands you can use to 
 # Now, let's repeat the analysis under the general time reversible (GTR) model.
 
 iqtree2 -s youralignment.fa -m GTR -bb 1000
+
+# make a new directory to organize your files
 mkdir JC to create JC model directory
 mv youralignment.fa* JC 
 
