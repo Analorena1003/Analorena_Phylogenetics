@@ -4,7 +4,7 @@
 iqtree2 -s youralignment.fa -m JC -bb 1000
 iqtree-2.3.6-Linux-intel/bin/iqtree2 iqtree2 -s youralignment.fa -m JC -bb 1000
 
-#What do these command arguments represent?
+# What do these command arguments represent?
 Represents the models to infer maximum-likelihood. Some commands you can use to select the best model. Or you can directly select what model do you want to use. For example: jModelTest/ProtTest. Or some commands you can directly put the bootstrap values.
 
 # So the arguments -m JC -bb 1000 represents that I want to use JC model with 1000 replicates of bootstrap.
