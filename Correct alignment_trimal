@@ -1,20 +1,26 @@
-trimal
+# Install trimal in your environmental > this is the software to correct alignments
 mamba install trimal -c bioconda
 
-seqkit
+# install seqkit > this software is to do some statistics in your sequencs, genomes, genes
 mamba install seqkit -c bioconda
 
-ls
+# ls > give you the list of documents that you have in your current directory
+
+# Now, make corrections in your alignment
 trimal -in SSU.aln -out SSU.trim.aln -gt 0.1 
+
+# see the stats of your alignments
 seqkit stats *.aln
+
+# see stats of your trimed alignment and compare with the original alignment
 seqkit stats SSU.trim.aln 
 seqkit stats SSU.aln
-trimal 
 
+# Use "help" command to see all functions of the software
 seqkit --help
 trimal --help
 
-EXAMPLE YFV:
+# EXAMPLE YFV > change the files and use yours
 trimal -in YFV_aligment_MAFFT.fasta -out YFV_aligment.trim.aln -gt 0.1 
 seqkit stats YFV_aligment_MAFFT.fasta
 seqkit stats YFV_aligment.trim.aln
