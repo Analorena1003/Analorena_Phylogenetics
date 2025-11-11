@@ -6,7 +6,7 @@ ssh your_id@owl1.arc.vt.edu
 ssh analorena@owl1.arc.vt.edu
 
 # Download IQTREE program on HPC:
-wget https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-1.6.12-Linux.tar.gz
+wget https://github.com/Cibiv/IQ-TREE/releases/download/v1.6.12/iqtree-2.3.6-Linux-intel.tar.gz
 
 # Unzip tar.gz-compressed directory using tar command:
 tar -xvzf iqtree-1.6.12-Linux.tar.gz
