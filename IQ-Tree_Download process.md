@@ -9,7 +9,7 @@ ssh analorena@owl1.arc.vt.edu
 wget https://github.com/iqtree/iqtree2/releases/download/v2.4.0/iqtree-2.4.0-Linux-intel.tar.gz
 
 # Unzip tar.gz-compressed directory using tar command:
-tar -xvzf iqtree-1.6.12-Linux.tar.gz
+tar -xvzf iqtree-2.4.0-Linux-intel.tar.gz
 
 # Navigate to the unzipped folder and explore its contents. Typically, the executable program file (in our case it is the IQTREE program) is in the bin directory. Try to open it by typing:
 ./iqtree2 -h
