@@ -1,0 +1,64 @@
+# combine sequences - Dowdload all sequences that you want to use in the analyses (ingroup and outgroup)
+cat sequence1.fasta sequence2.fasta sequence3.fasta > combined_sequences.fna
+
+#alignment of sequences including outgroup
+clustalo -i combined_sequences.fna -o combined_sequences.aln 
+
+# if your file is so big (example: genomes or big data, or more that 300 sequences) I recommend sibmit it to ARC - VT
+nano clustalo_job.slurm 
+
+#now, copy and paste this code in your nano file (make sure you move with keyboard <>^ / Edit with the names of your files / Make sure you are in the base of ARC - VT (owl, falcon...), not in R terminal (unix)
+
+#!/bin/bash
+#SBATCH --account=luis_escobar
+#SBATCH --partition=normal_q
+#SBATCH --job-name=alignment_combined_sequences
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+#SBATCH --mem=128G
+#SBATCH --time=24:00:00
+#SBATCH --output=combined_sequences_%j.out
+#SBATCH --error=combined_sequences_%j.err
+module load mamba/py39
+source activate py39
+SCRATCH=/scratch/$USER/$SLURM_JOB_ID
+mkdir -p $SCRATCH
+cp combined_sequences.fna $SCRATCH/
+cd $SCRATCH
+/usr/bin/time -v clustalo \
+    --threads=32 \
+    -i combined_sequences.fna \
+    -o combined_sequences.aln \
+    --outfmt=fasta \
+    --full \
+    --full-iter
+cp combined_alignment_ancestral_rabv.aln $SLURM_SUBMIT_DIR/
+
+# Save the nano file with Control X , Y
+
+# Now submitt your job
+sbatch clustalo_job.slurm
+
+# ARC -VT will send you a message like this: "Submitted batch job 194811" that's mean your job is running now. (194811 meand the ID of this specific job).
+
+# When your job is submitted, verify if is running with squeue command
+squeue --help  
+squeue -u $USER
+
+# When the job finished, you can see all the files in your current directory.
+
+# Verify the first lines of your alignment
+head combined_sequences.aln
+
+# Verify all lines of your alignment
+more combined_sequences.aln
+
+# To scape 
+q
+
+# It's time to trimm your alignment
+trimmal
+
+# Now, it's time to construct your first fast phylogenetic tree
+fasttree -nt combined_sequences.aln > tree1_combined_sequences.nwk
