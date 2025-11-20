@@ -58,7 +58,8 @@ more combined_sequences.aln
 q
 
 # It's time to trimm your alignment
-trimmal
+trimmal --help
+trimal -in combined_sequences.aln -out combined_sequences.trim.aln -gt 0.1 
 
 # Now, it's time to construct your first fast phylogenetic tree
 fasttree -nt combined_sequences.aln > tree1_combined_sequences.nwk
