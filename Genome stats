@@ -4,3 +4,4 @@
 # seqkit stats XXXXX
 
 # seqkit fx2tab -l -n -g XXXXXX.fna
+#prodigal -i xxxx_genomic.fna -a xxx.proteins.faa -d xxx.genes.fna -o xxx.output_table.gff
