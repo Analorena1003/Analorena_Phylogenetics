@@ -1,0 +1,21 @@
+#Let's start by downloading a Staphylococcus aureus genome from NCBI using this command:
+
+wget
+
+#and let's make sure to unzip it so that we can access the .fna file directly (gunzip command). Make sure to use "head" and "tail" 
+
+gunzip XXXXX
+head XXXXX
+tail XXXXX
+
+#and
+
+ls -lh
+
+#Now let's get some basic stats using seqkit so we know what we're dealing with:
+
+seqkit stats XXXXX.fna
+
+#and
+
+seqkit fx2tab -l -n -g XXXXXc.fna
