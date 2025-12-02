@@ -34,3 +34,16 @@ conda install prodigal -c bioconda
 After installation, you can take a look at the help menu:
 
 #prodigal -h
+
+#Predicting rRNA genes with Barrnap
+#So far we have only considered protein-coding genes, but genes that encode functional RNAs are very important and should be considered as well.
+
+#To predict rRNAs and tRNAs we will use the tool barrnap: https://github.com/tseemann/barrnap
+
+#To install barrnap we will use Anaconda, just as with prodigal:
+
+conda install barrnap -c bioconda
+
+#Barrnap is a relatively simple tool to use. We can see the help menu with
+
+barrnap -h
