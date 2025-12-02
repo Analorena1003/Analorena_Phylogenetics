@@ -47,3 +47,29 @@ conda install barrnap -c bioconda
 #Barrnap is a relatively simple tool to use. We can see the help menu with
 
 barrnap -h
+
+#We essentially just need to give it the input FASTA file of the genome, and specify an output file with a ">" symbol.
+
+barrnap XXXX_genomic.fna > XXX_rRNA.gff
+
+#This gives us a GFF file with the coordinates of the predicted RNA genes, but it does not give us the sequences. To retrieve them we need to use a tool called BEDtools, which will cross reference the genome file with the GFF file and give us a FASTA file of all of the rRNA genes. More information on BEDtools can be found here: https://bedtools.readthedocs.io/en/latest/
+
+#To install bedtools we can use the same conda command as we have been using:
+
+conda install bedtools -c bioconda
+
+#Bedtools is quite a versatile program, but here we only need to do something rather simple, so we will only use only one command:
+
+bedtools getfasta -s -fi XXXXX_genomic.fna -bed XXXX_rRNA.gff -fo rRNA.fasta
+
+#The rRNA.fasta file should have our rRNA genes. We need to supply the input sequence (-fi), the output file name (-fo), and the gff (-bed). The -s flag makes sure we retrieve sequences on the appropriate strand. Let's see how many we found:
+
+seqkit stats XXXX_rRNA.fasta
+
+seqkit fx2tab -n -l -g XXXX_rRNA.fasta
+
+and let's say we wanted to get the sequence of the first 16S rRNA gene:
+
+seqkit fx2tab XXXX_rRNA.fasta | grep "NZ_CP014429.1:512722-514271"
+
+Retrieving the sequence of a 16S rRNA gene can be very helpful if you are unsure of the taxonomy of the genome that you are examining. These genes can be compared to various 16S databases to help identify a microbe.
