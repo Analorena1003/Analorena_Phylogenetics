@@ -19,3 +19,18 @@ seqkit stats XXXXX.fna
 #and
 
 seqkit fx2tab -l -n -g XXXXXc.fna
+
+#Predicting Protein-Coding Genes with Prodigal
+#Now we can start predicting genes using Prodigal. The main page for this tool is here: https://github.com/hyattpd/Prodigal
+
+#Prodigal is an excellent gene-prediction tool that works well for finding protein-coding genes. The paper that described this tool is quite readable and nicely describes some of the primary challenges of gene prediction Link to Prodigal paper!
+
+#To install this tool you will probably be able to use Anaconda with the bioconda channel:
+
+conda install prodigal -c bioconda
+
+#Keep this general command format in mind- in future tutorials I won't explicitly put download instructions for tools unless they are atypical.
+
+After installation, you can take a look at the help menu:
+
+#prodigal -h
